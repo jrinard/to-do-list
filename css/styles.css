@@ -1,0 +1,15 @@
+#show-task-details {
+  display: none;
+}
+#task-list {
+  display: none;
+}
+
+.task {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.task:hover {
+  text-decoration: underline;
+}
