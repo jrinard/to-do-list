@@ -4,7 +4,11 @@ Product Specifications:
 
 * create input form to collect data
 
-* create output to display tasks
+* create output to display Not Started tasks
+
+* create output to display In Process tasks
+
+* create output to display Completed tasks
 
 * create individual task "show more" breakout with task details
 
@@ -17,4 +21,7 @@ Product Specifications:
 * Call keys to create list of task Names
 
 * If user clicks a task, display the "show more" div for that item.
-  
+
+* if user click Start Task button, move to In Process tasks section
+
+* if user marks task as Complete, move to Complete tasks section

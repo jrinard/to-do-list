@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Here is what you need to do:</h1>
+      <h1>To Do List</h1>
 
       <div class="row">
         <div class="col-md-6">
@@ -50,17 +50,17 @@
 
             <button type="submit" class="btn">Add Task</button>
           </form>
-
           <div id = "task-list">
             <h2>Your Tasks:</h2>
-
+            <ul id="task"></ul>
           </div>
-          <ul id="task">
-          </ul>
-        </div>
-
-        <div class="col-md-6">
-          <div id="show-task-details">
+          <div id ="completed-task-list">
+            <h2>Completed Tasks:</h2>
+            <ul id="completed-task"></ul>
+          </div>
+        </div><!-- column end -->
+          <div class="col-md-6">
+            <div id="show-task-details">
             <h2></h2>
 
             <p>Task Name: <span class="name"></span></p>
@@ -69,9 +69,10 @@
             <p>Estimated Difficulty: <span class="difficulty"></span></p>
             <p>Assigned by: <span class="assigned"></span></p>
             <p>Additional Notes: <span class="notes"></span></p>
-          </div>
-        </div>
-      </div>
-    </div>
+
+          </div><!-- task details -->
+        </div><!-- right column -->
+      </div><!-- row -->
+    </div><!-- Container -->
   </body>
 </html>

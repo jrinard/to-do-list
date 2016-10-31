@@ -1,5 +1,4 @@
 // Constructor
-
 function Task(name, description, date, difficulty, assigned, notes){
   this.name = name;
   this.description = description;
@@ -9,7 +8,10 @@ function Task(name, description, date, difficulty, assigned, notes){
   this.notes = notes;
 };
 
-
+// Prototype
+Task.prototype.nameDate = function () {
+  return this.name + " - " + this.date;
+};
 
 // Front end
 $(document).ready(function(){
@@ -25,10 +27,20 @@ $(document).ready(function(){
 
     var newTask = new Task (inputtedName,inputtedDescription,inputtedDate,inputtedDifficulty,inputtedAssigned,inputtedNotes);
 
-    $("ul#task").append("<li><span class='task'>" + newTask.name + "</span></li>");
+    //add task to task list
+    $("ul#task").append("<li><span class='task'>" + newTask.nameDate() + "</span> <a>Mark as complete</a></li>");
     $("#task-list").show();
 
-    $("#task").last().click(function(){
+    //clear inputs on submit
+    $('input#name').val("");
+    $("input#description").val("");
+    $('input#date').val("");
+    $('input#difficulty').val("");
+    $('input#assigned').val("");
+    $('input#notes').val("");
+
+    //add content to task details
+    $(".task").last().click(function(){
       $("#show-task-details").show();
       $("#show-task-details h2").text(newTask.name);
       $(".name").text(newTask.name);
@@ -37,9 +49,10 @@ $(document).ready(function(){
       $(".difficulty").text(newTask.difficulty);
       $(".assigned").text(newTask.assigned);
       $(".notes").text(newTask.notes);
-
-
-
+    });
+    $("#task a").click(function() {
+      $(this).parent().toggleClass("completed");
+      $("#show-task-details").toggleClass("completed");
     });
   });
 });
